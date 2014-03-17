@@ -1,0 +1,21 @@
+html {
+	min-height: 100%;
+	position: relative;
+	overflow: scroll;
+	background-color: #eef9fc;
+	margin-left: 150px;
+	margin-right: 150px;
+}
+
+div.calc {
+	float: left;
+	width: 25%;
+	margin-left: 0%;
+}
+
+div.protocol {
+	float: left;
+	width: 25%;
+	margin-left: 50%;
+}
+
