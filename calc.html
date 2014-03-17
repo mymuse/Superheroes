@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calculator</title>
+<link rel="stylesheet" type="text/css" href="styles/calcstyle.css">
+<script type="text/javascript">
+	var x;
+	function v(symb) {
+		document.getElementsByName("disp")[0].value += symb;
+	}
+	function plusfun() {
+		x = "+";
+		v(x);
+	}
+	function minusfun() {
+		x = "-";
+		v(x);
+	}
+	function divfun() {
+		x = "/";
+		v(x);
+	}
+	function multfun() {
+		x = "*";
+		v(x);
+	}
+	function result() {
+		var calc = document.getElementsByName("disp")[0].value.split(x);
+		if (x === '+') {
+			var res = parseInt(calc[0]) + parseInt(calc[1]);
+			document.getElementsByName("disp")[0].value = res;
+			var s = calc[0] + '+' + calc[1] + '=' + res;
+			document.getElementsByName("textarea")[0].value += s + '\n';
+		}
+		if (x === '-') {
+			var res = parseInt(calc[0]) - parseInt(calc[1]);
+			document.getElementsByName("disp")[0].value = res;
+			var s = calc[0] + '-' + calc[1] + '=' + res;
+			document.getElementsByName("textarea")[0].value += s + '\n';
+		}
+		if (x === '*') {
+			var res = parseInt(calc[0]) * parseInt(calc[1]);
+			document.getElementsByName("disp")[0].value = res;
+			var s = calc[0] + '*' + calc[1] + '=' + res;
+			document.getElementsByName("textarea")[0].value += s + '\n';
+		}
+		if (x === '/') {
+			var res = parseInt(calc[0]) / parseInt(calc[1]);
+			document.getElementsByName("disp")[0].value = res;
+			var s = calc[0] + '/' + calc[1] + '=' + res;
+			document.getElementsByName("textarea")[0].value += s + '\n';
+		}
+
+	}
+	function cleanfun() {
+		document.getElementsByName("disp")[0].value = "";
+	}
+	function checkTime(i)
+	{
+		if (i<10)
+ 		 {
+ 		 	i="0" + i;
+ 		 }
+		return i;
+	}
+	function startTime()
+	{
+		var time=new Date();
+		var h=time.getHours();
+		var m=time.getMinutes();
+		var s=time.getSeconds();
+		m=checkTime(m);
+		s=checkTime(s);
+		document.getElementById('clock').innerHTML = h+":"+m+":"+s;
+		setTimeout(function(){ startTime();},500);
+	}
+	
+</script>
+</head>
+<body onload="startTime();">
+	<div>
+		<div class="calc">
+			<h1>Calculator</h1>
+			<form class="calc" action="">
+				<p>
+					<input name="disp" type="text" value="" /> <br> <input
+						name="b1" type="button" onclick="v(1);" value="1" /> <input
+						name="b2" type="button" onclick="v(2);" value="2" /> <input
+						name="b3" type="button" onclick="v(3);" value="3" /> <input
+						name="plus" type="button" onclick="plusfun();" value="+" /><br>
+
+					<input name="b4" type="button" onclick="v(4);" value="4" /> <input
+						name="b5" type="button" onclick="v(5);" value="5" /> <input
+						name="b6" type="button" onclick="v(6);" value="6" /> <input
+						name="minus" type="button" onclick="minusfun();" value="-" /> <br>
+
+					<input name="b7" type="button" onclick="v(7);" value="7" /> <input
+						name="b8" type="button" onclick="v(8);" value="8" /> <input
+						name="b9" type="button" onclick="v(9);" value="9" /> <input
+						name="mult" type="button" onclick="multfun();" value="*" /><br>
+
+					<input name="clean" type="button" onclick="cleanfun();" value="C" />
+					<input name="b0" type="button" onclick="v(0);" value="0" /> <input
+						name="res" type="button" onclick="result();" value="=" /> <input
+						name="div" type="button" onclick="divfun();" value="/" />
+
+
+				</p>
+			</form>
+		</div>
+		<div class="protocol">
+			<h1>Protocol</h1>
+			<textarea name="textarea" rows=10></textarea>
+		</div>
+	</div>
+	<h1 id="clock">
+		
+	</h1>
+</body>
+</html>
