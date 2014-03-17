@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Heroes catalog</title>
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<script type="text/javascript" >
+
+	function initFrimSelectors(){
+		var table = document.getElementById("catalog");
+		var firms = table.getElementsByClassName("firm");
+		for(var i=0;i<firms.length;i++){
+			var head = firms[i].getElementsByClassName("firm_header")[0];
+			
+			head.onclick = (function(){
+				var c = i;
+				return function(){
+					console.log(c);
+					var details = firms[c].getElementsByClassName("firm_info_hidden");
+					if(details.length!==0){
+						details[0].className = "firm_info_visible";
+					}else{
+						details = firms[c].getElementsByClassName("firm_info_visible");
+						details[0].className = "firm_info_hidden";
+					}
+				};
+			})(i);
+		}
+	}
+
+	function initial() {
+		var table = document.getElementById("catalog");
+		var rows = table.getElementsByTagName("tr");
+		rows[0].className = "selectedRow";
+		for(var i = 0;i<rows.length;i++){
+			rows[i].onclick = (function(){
+				var c=i;
+				return function(){
+					var row_selected = table.getElementsByClassName("selectedRow")[0];
+					row_selected.className = "";
+					rows[c].className = "selectedRow";
+				};
+			})(i);
+		}
+		initFrimSelectors();
+	}
+
+	function bet() {
+		var row = document.getElementsByClassName("selectedRow")[0];
+		var bet_dom = row.getElementsByClassName("bet")[0];
+		bet_dom.checked = !bet_dom.checked;
+	}
+	
+	function send(){
+		var table = document.getElementById("catalog");
+		var rows = table.getElementsByTagName("tr");
+		
+		var win = window.open("","","");
+		
+		for(var i=0;i<rows.length;i++){
+			var bet_i = rows[i].getElementsByClassName("bet")[0];
+			if(bet_i.checked){
+				var h1s = rows[i].getElementsByClassName("h1_catalog");
+				win.document.writeln("Name "+h1s[0].innerHTML+", price - "+h1s[1].innerHTML+"<br>");
+			}
+		}
+	}
+
+</script>
+<script src = "js/up_down_catalog.js">
+	
+</script>
+</head>
+<body onload="initial();">
+
+	<div class="header">
+		<img class="design" alt=""
+			src="https://dl.dropboxusercontent.com/u/92008230/superhero/design.png">
+		<img class="nameOrg" alt=""
+			src="https://dl.dropboxusercontent.com/u/92008230/superhero/name_org.jpg">
+	</div>
+
+	<div class="container">
+		<div class="nav">
+
+			<a href="index.html"><img
+				src="https://dl.dropboxusercontent.com/u/92008230/superhero/nav_home.jpg"></a>
+			<a href="catalog.html"><img
+				src="https://dl.dropboxusercontent.com/u/92008230/superhero/nav_catalog.jpg"></a>
+			<a href="delivery.html"><img
+				src="https://dl.dropboxusercontent.com/u/92008230/superhero/nav_delivery.jpg"></a>
+
+		</div>
+		<div class="content">
+			<h1>HEROES CATALOG</h1>
+			<br>
+			<table class="hcatalog" id="catalog">
+				<tr class="selectable">
+					<td class="tdImg"><a href="ironman.html"> <img
+							class="limg" alt=""
+							src="http://rewalls.com/images/201208/reWalls.com_69500.jpg"></a>
+					</td>
+					<td class="tdInfo">
+						<a href="ironman.html">
+							<h1 class="h1_catalog h1_link">IRONMAN</h1>
+						</a> <br> 
+						<div class="firm">
+							<div class="firm_header">Marvell</div>
+							<div class="firm_info_hidden">
+								blah-blah-blah
+							</div>
+						</div>
+					</td>
+					<td class="tdInfo" title="Current price">
+						<h1 class="h1_catalog">200 $</h1> 
+						<input class = "bet" type="checkbox">BET
+						<div class="tdInfo" title="Time left">28h 30m </div>
+					</td>
+				</tr>
+
+				<tr class="selectable">
+					<td class="tdImg"><a href="superman.html"> <img
+							class="limg" alt=""
+							src="http://static.comicvine.com/uploads/original/12/120919/3223740-6740249946-Super.jpg"></a>
+					</td>
+					<td class="tdInfo" ><a href="superman.html"><h1
+								class="h1_catalog h1_link">SUPERMAN</h1></a> <br>
+								<div class="firm">
+							<div class="firm_header">DC</div>
+							<div class="firm_info_hidden">
+								blah-blah-blah
+							</div>
+						</div>
+					</td>
+					<td class="tdInfo" title="Current price">
+						<h1 class="h1_catalog">250 $</h1> 
+						<input class = "bet" type="checkbox" />BET
+						<div class="tdInfo" title="Time left">36h 5m </div>
+					</td>	
+				</tr>
+			</table>
+			<form class="actButtons">
+				<input type="button" onclick="up();" value="UP"> <input
+					type="button" onclick="down();" value="DOWN"> <input
+					type="button" onclick="bet();" value="BET"> <input
+					type="button" onclick="send();" value="SEND">
+			</form>
+		</div>
+	</div>
+	<br>
+	<div class="sign">
+		Superheroes Auction © 2014 <br>by Alena Chuchalina & Ivan Kar
+	<div class="sign_info">
+		Chuchalina Alena<br>
+		Ivan Kar
+	</div>
+	</div>
+</body>
+</html>
