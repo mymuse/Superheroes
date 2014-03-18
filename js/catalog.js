@@ -1,48 +1,30 @@
 function initFrimSelectors() {
-    var table = document.getElementById("catalog");
-    var firms = table.getElementsByClassName("firm");
-    for (var i = 0; i < firms.length; i++) {
-        var head = firms[i].getElementsByClassName("firm_header")[0];
-
-        head.onclick = (function() {
-            var c = i;
-            return function() {
-                console.log(c);
-                var details = firms[c].getElementsByClassName("firm_info_hidden");
-                if (details.length !== 0) {
-                    details[0].className = "firm_info_visible";
-                } else {
-                    details = firms[c].getElementsByClassName("firm_info_visible");
-                    details[0].className = "firm_info_hidden";
-                }
-            };
-        })(i);
-    }
+    $(".firm > .firm_header").click(function(){
+		var info = $(this).siblings(".firm_info");
+		if(info.hasClass("firm_info_hidden")){
+			info.removeClass("firm_info_hidden");
+			info.addClass("firm_info_visible");
+		}else{
+			info.removeClass("firm_info_visible");
+			info.addClass("firm_info_hidden");
+		}
+    });
 }
 
 function initial() {
-    var table = document.getElementById("catalog");
-    var rows = table.getElementsByTagName("tr");
-    rows[0].className = "selectedRow";
-    for (var i = 0; i < rows.length; i++) {
-        rows[i].onclick = (function() {
-            var c = i;
-            return function() {
-                var row_selected = table.getElementsByClassName("selectedRow")[0];
-                row_selected.className = "";
-                rows[c].className = "selectedRow";
-            };
-        })(i);
-    }
+    $("#catalog > tbody > tr").click(function(){
+    	$(".selectedRow").removeClass("selectedRow");
+    	$(this).addClass("selectedRow");
+    });
     initFrimSelectors();
 }
 
 function bet() {
-    var row = document.getElementsByClassName("selectedRow")[0];
-    var bet_dom = row.getElementsByClassName("bet")[0];
-    bet_dom.checked = !bet_dom.checked;
+	var bet_dom = $(".selectedRow").find(".bet");
+    bet_dom[0].checked = !bet_dom[0].checked;
 }
 
+//do it, i think its complex and include all fetures we should know in jquery
 function send() {
     var table = document.getElementById("catalog");
     var rows = table.getElementsByTagName("tr");

@@ -1,26 +1,17 @@
-	function verticalMove(check, increment) {
-	    var table = document.getElementById("catalog");
-	    var rows = table.getElementsByTagName("tr");
-	    for (var i = 0; i < rows.length; i++) {
-	        if (rows[i].className === "selectedRow") {
-	            if (check(i, rows)) {
-	                rows[i + increment].className = "selectedRow";
-	                rows[i].className = "";
-	            }
-	            break;
-	        }
+	function up() {
+	    var current = $(".selectedRow");
+	    var prev = current.prev();
+	    if (prev.length !== 0) {
+	        prev.addClass("selectedRow");
+	        current.removeClass("selectedRow");
 	    }
 	}
 
-	function up() {
-	    verticalMove(function(i, rows) {
-	        return i - 1 >= 0;
-	    }, -1);
-	}
-
 	function down() {
-
-	    verticalMove(function(i, rows) {
-	        return i + 1 < rows.length;
-	    }, 1);
+	    var current = $(".selectedRow");
+	    var next = current.next();
+	    if (next.length !== 0) {
+	        next.addClass("selectedRow");
+	        current.removeClass("selectedRow");
+	    }
 	}
