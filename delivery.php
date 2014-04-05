@@ -1,30 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Delivery</title>
-<link rel="stylesheet" type="text/css" href="styles/style.css">
-</head>
-<body>
-
-	<div class="header">
-		<img class="design" alt=""
-			src="https://dl.dropboxusercontent.com/u/92008230/superhero/design.png">
-		<img class="nameOrg" alt=""
-			src="https://dl.dropboxusercontent.com/u/92008230/superhero/name_org.jpg">
-	</div>
-
+﻿<?php include $_SERVER['DOCUMENT_ROOT']."\Superheroes\before.php";
+printHeader("","");?>
 	<div class="container">
-		<div class="nav">
-
-			<a href="index.html"><img
-				src="https://dl.dropboxusercontent.com/u/92008230/superhero/nav_home.jpg"></a>
-			<a href="catalog.html"><img
-				src="https://dl.dropboxusercontent.com/u/92008230/superhero/nav_catalog.jpg"></a>
-			<a href="delivery.html"><img
-				src="https://dl.dropboxusercontent.com/u/92008230/superhero/nav_delivery.jpg"></a>
-
-		</div>
 		<div class="content">
 			<h1 style="text-align: center">DELIVERY</h1>
 			<br>
@@ -53,9 +29,4 @@
 				eligible for myus.com's services.</p>
 		</div>
 	</div>
-	<br>
-	<div class="sign">
-		Superheroes Auction © 2014 <br>by Alena Chuchalina & Ivan Kar
-	</div>
-</body>
-</html>
+<?php printFooter();?>

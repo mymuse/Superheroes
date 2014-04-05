@@ -1,40 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Heroes catalog</title>
-<link rel="stylesheet" type="text/css" href="styles/style.css">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-<script src = "js/catalog.js"></script>
-<script src = "js/up_down_catalog.js">
-</script>
-</head>
-<body onload="initial();">
-
-	<div class="header">
-		<img class="design" alt=""
-			src="https://dl.dropboxusercontent.com/u/92008230/superhero/design.png">
-		<img class="nameOrg" alt=""
-			src="https://dl.dropboxusercontent.com/u/92008230/superhero/name_org.jpg">
-	</div>
-
+﻿<?php include $_SERVER['DOCUMENT_ROOT']."\Superheroes\before.php";
+printHeader("Catalog","initial()");?>
 	<div class="container">
-		<div class="nav">
-
-			<a href="index.html"><img
-				src="https://dl.dropboxusercontent.com/u/92008230/superhero/nav_home.jpg"></a>
-			<a href="catalog.html"><img
-				src="https://dl.dropboxusercontent.com/u/92008230/superhero/nav_catalog.jpg"></a>
-			<a href="delivery.html"><img
-				src="https://dl.dropboxusercontent.com/u/92008230/superhero/nav_delivery.jpg"></a>
-
-		</div>
 		<div class="content">
 			<h1>HEROES CATALOG</h1>
 			<br>
 			<table class="hcatalog" id="catalog">
 				<tr class="selectable selectedRow">
-					<td class="tdImg"><a href="ironman.html"> <img
+					<td class="tdImg"><a href="ironman.php"> <img
 							class="limg" alt=""
 							src="http://rewalls.com/images/201208/reWalls.com_69500.jpg"></a>
 					</td>
@@ -45,7 +17,7 @@
 						<div class="firm">
 							<div class="firm_header">Marvell</div>
 							<div class="firm_info firm_info_hidden">
-								blah-blah-blah
+								Marvel Entertainment, LLC, a wholly-owned subsidiary of The Walt Disney Company
 							</div>
 						</div>
 					</td>
@@ -57,7 +29,7 @@
 				</tr>
 
 				<tr class="selectable">
-					<td class="tdImg"><a href="superman.html"> <img
+					<td class="tdImg"><a href="superman.php"> <img
 							class="limg" alt=""
 							src="http://static.comicvine.com/uploads/original/12/120919/3223740-6740249946-Super.jpg"></a>
 					</td>
@@ -66,7 +38,7 @@
 								<div class="firm">
 							<div class="firm_header">DC</div>
 							<div class="firm_info firm_info_hidden">
-								blah-blah-blah
+								DC Comics is home to the "World's Greatest Super Heroes"
 							</div>
 						</div>
 					</td>
@@ -85,13 +57,4 @@
 			</form>
 		</div>
 	</div>
-	<br>
-	<div class="sign">
-		Superheroes Auction © 2014 <br>by Alena Chuchalina & Ivan Kar
-	<div class="sign_info">
-		Chuchalina Alena<br>
-		Ivan Kar
-	</div>
-	</div>
-</body>
-</html>
+<?php printFooter();?>
