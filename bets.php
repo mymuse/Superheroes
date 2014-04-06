@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -11,14 +11,10 @@
 <body>
 	<?php
 	include "before.php";
-	printHeader ();
+	//show bet
 	?>
-	
-	<div class="content">
-		<img
-			class="detImg" src="images/content.jpg">
-	</div>
 
-<?php include 'after.php';?>
+
+<?php include "after.php";?>
 </body>
 </html>

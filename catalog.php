@@ -9,65 +9,68 @@
 <script src="js/all.js\"></script>
 </head>
 <body onload="initial();">
-<?php include $_SERVER['DOCUMENT_ROOT']."\before.php";
-printHeader();?>
+<?php
+
+include "before.php";
+$query = sprintf ( "SELECT a.end_time as end_time, a.id as id, h.name as name,h.min_bet as min_bet,h.history as history,h.powers as powers,h.picture_main as picture_main,h.picture_descr as picture_descr,c.name as firm, c.descr as firmDescr 
+		FROM auction a
+		inner join heroe h on a.id_heroe = h.id
+		inner join company c on h.id_company = c.id;" );
+$link = mysql_connect ( 'localhost:3306', 'root', 'root' );
+$db_selected = mysql_select_db ( 'auction', $link );
+if (! $db_selected) {
+	echo "db not selected";
+	exit ();
+}
+$result = mysql_query ( $query );
+if (! $result) {
+	echo "query error\n";
+	echo $query;
+	exit ();
+}
+
+?>
 	<div class="container">
 		<div class="content">
 			<h1>HEROES CATALOG</h1>
 			<br>
 			<table class="hcatalog" id="catalog">
-				<tr class="selectable selectedRow">
-					<td class="tdImg"><a href="ironman.php"> <img
-							class="limg" alt=""
-							src="http://rewalls.com/images/201208/reWalls.com_69500.jpg"></a>
+				<?php 
+				$selectedAdded = false;
+				while ($row = mysql_fetch_array($result)) {
+				    ?>
+				    <tr class="selectable <?php if(!$selectedAdded){echo "selectedRow";$selectedAdded=true;}?>" name="<?php echo $row['id']?>">
+					<td class="tdImg"><a href="<?php echo "heroe.php?".$row['name'];?>"> <img class="limg" alt=""
+							src="<?php echo $row['picture_main'];?>"></a>
 					</td>
-					<td class="tdInfo">
-						<a href="ironman.php">
-							<h1 class="h1_catalog h1_link">IRONMAN</h1>
-						</a> <br> 
+					<td class="tdInfo"><a href="<?php echo "heroe.php?".$row['name'];?>">
+							<h1 class="h1_catalog h1_link"><?php echo $row['name'];?></h1>
+					</a> <br>
 						<div class="firm">
-							<div class="firm_header">Marvell</div>
-							<div class="firm_info firm_info_hidden">
-								Marvel Entertainment, LLC, a wholly-owned subsidiary of The Walt Disney Company
-							</div>
-						</div>
-					</td>
+							<div class="firm_header"><?php echo $row['firm'];?></div>
+							<div class="firm_info firm_info_hidden"><?php echo $row['firmDescr'];?></div>
+						</div></td>
 					<td class="tdInfo" title="Current price">
-						<h1 class="h1_catalog">200 $</h1> 
-						<input class = "bet" type="checkbox">BET
-						<div class="tdInfo" title="Time left">28h 30m </div>
+						<h1 class="h1_catalog"><?php echo $row['min_bet'];?> $</h1> <input class="bet"
+						type="checkbox">BET
+						<div class="tdInfo" title="End date"><?php echo $row['end_time']?></div>
 					</td>
-				</tr>
-
-				<tr class="selectable">
-					<td class="tdImg"><a href="superman.php"> <img
-							class="limg" alt=""
-							src="http://static.comicvine.com/uploads/original/12/120919/3223740-6740249946-Super.jpg"></a>
-					</td>
-					<td class="tdInfo" ><a href="superman.php"><h1
-								class="h1_catalog h1_link">SUPERMAN</h1></a> <br>
-								<div class="firm">
-							<div class="firm_header">DC</div>
-							<div class="firm_info firm_info_hidden">
-								DC Comics is home to the "World's Greatest Super Heroes"
-							</div>
-						</div>
-					</td>
-					<td class="tdInfo" title="Current price">
-						<h1 class="h1_catalog">250 $</h1> 
-						<input class = "bet" type="checkbox" />BET
-						<div class="tdInfo" title="Time left">36h 5m </div>
-					</td>	
-				</tr>
+				    
+				    </tr>
+				<?php }?>				
 			</table>
+
+
+
+
 			<form class="actButtons">
 				<input type="button" onclick="up();" value="UP"> <input
-					type="button" onclick="down();" value="DOWN"> <input
-					type="button" onclick="bet();" value="BET"> <input
-					type="button" onclick="send();" value="SEND">
+					type="button" onclick="down();" value="DOWN"> <input type="button"
+					onclick="bet();" value="BET"> <input type="button"
+					onclick="send();" value="SEND">
 			</form>
 		</div>
 	</div>
-<?php printFooter();?>
+<?php include 'after.php';?>
 </body>
 </html>

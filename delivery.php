@@ -9,8 +9,7 @@
 <script src="js/all.js\"></script>
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT']."\before.php";
-printHeader();?>
+<?php include "before.php";?>
 	<div class="container">
 		<div class="content">
 			<h1 style="text-align: center">DELIVERY</h1>
@@ -40,6 +39,6 @@ printHeader();?>
 				eligible for myus.com's services.</p>
 		</div>
 	</div>
-<?php printFooter();?>
+<?php include 'after.php';?>
 </body>
 </html>

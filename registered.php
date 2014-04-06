@@ -11,7 +11,7 @@
 <body>
 <?php
 
-include $_SERVER ['DOCUMENT_ROOT'] . "\before.php";
+include  "before.php";
 printHeader ();
 ?>
 <div class="content">
@@ -42,10 +42,10 @@ if ($isOk) {
 	session_start();
 	
 	$query = sprintf("insert into account (name,email,pwd,gender) values('%s','%s','%s',%s)",
-			mysql_real_escape_string($name),
-			mysql_real_escape_string($email),
-			mysql_real_escape_string($pwd),
-			mysql_real_escape_string($gender));
+			$name,
+			$email,
+			$pwd,
+			$gender);
 	$link = mysql_connect('localhost:3307', 'root', 'root');
 	$db_selected = mysql_select_db('auction', $link);
 	if (!$db_selected) {
@@ -64,7 +64,7 @@ if ($isOk) {
 }
 ?></div>
 <?php
-printFooter ();
+include 'after.php';
 ?>
 	</body>
 </html>
