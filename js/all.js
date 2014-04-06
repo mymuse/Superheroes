@@ -51,26 +51,26 @@ function send() {
 	        current.removeClass("selectedRow");
 	    }
 	}
-	function validRegister() {
-		var em = document.getElementsByName("email")[0].value;
-		var pwd = document.getElementsByName("pwd")[0].value;
-		var gen = document.getElementsByName("gender")[0].value;
-		var name = document.getElementsByName("name")[0].value;
-	
-			
-		if ((checkEmail(em)) && (pwd.length > 5) && (name.length > 1)) {
+	function validRegister(f) {
+		console.log(f);
+		var em = f['email'].value;
+		var pwd = f['pwd'].value;
+		var gen = f['gender'].value;
+		var name = f['name'].value;
+		if ((checkEmail(em)) && (pwd.length >= 3) && (name.length > 1)) {
 			return true;
 		} 
 		else{
-			err = window.open("", "error", "width=400,height=200");	
-			if (pwd.length < 1) {
+			if (name.length < 1) {
+				alert("name");
 				return false;
 			}
 			if (!checkEmail(em)) {
+				alert("email");
 				return false;
 			}
-			if (pwd.length < 5) {
-			
+			if (pwd.length < 3) {
+				alert(pwd);
 				return false;
 			}
 		}

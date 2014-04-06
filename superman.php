@@ -1,4 +1,4 @@
-﻿<?php include $_SERVER['DOCUMENT_ROOT']."\Superheroes\before.php";
+﻿<?php include $_SERVER['DOCUMENT_ROOT']."\before.php";
 printHeader("","");?>
 	<div class="container">
 		<div class="nav">

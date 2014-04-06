@@ -54,12 +54,12 @@ body {
 }
 
 .signIn{
-	visible:false;
-	display:none;
+	visibility:hidden;
+	position: absolute;
 }
 
-.nameOrg:hover signIn{
-	visible:true;
+.header:hover > .signIn{
+	visibility: visible;
 }
 
 .design {

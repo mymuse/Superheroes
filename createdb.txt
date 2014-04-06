@@ -1,0 +1,48 @@
+DROP TABLE IF EXISTS bet;
+DROP TABLE IF EXISTS auction;
+DROP TABLE IF EXISTS heroe;
+DROP TABLE IF EXISTS company;
+DROP TABLE IF EXISTS account;
+create table account(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	name varchar(30) NOT NULL,
+	email varchar(30) NOT NULL,
+	pwd varchar(20) NOT NULL,
+	gender boolean NOT NULL
+);
+
+create table company(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	name varchar(20) NOT NULL,
+	descr varchar(4000)
+);
+
+create table heroe(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	name varchar(30) NOT NULL,
+	id_company int not null,
+	foreign key(id_company) references company (id),
+	min_bet int not null,
+	history varchar(4000),
+	powers varchar(4000),
+	picture_main varchar(300) NOT NULL,
+	picture_descr varchar(300) NOT NULL
+);
+
+create table auction(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	id_heroe int not null,
+	foreign key(id_heroe) references heroe(id),
+	end_time datetime not null
+);
+ create table bet(
+ 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ 	id_account int not null,
+ 	foreign key(id_account) references account(id),
+ 	id_auction int not null,
+ 	foreign key(id_auction) references auction(id) ,
+ 	bet int not null,
+ 	bet_time datetime not null
+ 	
+ 	
+ );

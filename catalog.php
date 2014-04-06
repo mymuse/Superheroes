@@ -1,5 +1,16 @@
-﻿<?php include $_SERVER['DOCUMENT_ROOT']."\Superheroes\before.php";
-printHeader("Catalog","initial()");?>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Catalog</title>
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script src="js/all.js\"></script>
+</head>
+<body onload="initial();">
+<?php include $_SERVER['DOCUMENT_ROOT']."\before.php";
+printHeader();?>
 	<div class="container">
 		<div class="content">
 			<h1>HEROES CATALOG</h1>
@@ -11,7 +22,7 @@ printHeader("Catalog","initial()");?>
 							src="http://rewalls.com/images/201208/reWalls.com_69500.jpg"></a>
 					</td>
 					<td class="tdInfo">
-						<a href="ironman.html">
+						<a href="ironman.php">
 							<h1 class="h1_catalog h1_link">IRONMAN</h1>
 						</a> <br> 
 						<div class="firm">
@@ -33,7 +44,7 @@ printHeader("Catalog","initial()");?>
 							class="limg" alt=""
 							src="http://static.comicvine.com/uploads/original/12/120919/3223740-6740249946-Super.jpg"></a>
 					</td>
-					<td class="tdInfo" ><a href="superman.html"><h1
+					<td class="tdInfo" ><a href="superman.php"><h1
 								class="h1_catalog h1_link">SUPERMAN</h1></a> <br>
 								<div class="firm">
 							<div class="firm_header">DC</div>
@@ -58,3 +69,5 @@ printHeader("Catalog","initial()");?>
 		</div>
 	</div>
 <?php printFooter();?>
+</body>
+</html>

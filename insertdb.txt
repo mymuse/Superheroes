@@ -1,0 +1,22 @@
+/*insert into account(name,email,pwd,gender) values ('Ivan','ivan.kar@heroes.org','ivan',true);
+insert into account(name,email,pwd,gender) values ('Alena','alena.chuchalina@heroes.org','alena',false);
+
+insert into company(name,descr) values ('DC','DC Comics is home to the Worlds Greatest Super Heroes');
+insert into company(name,descr) values ('MARVELL','Marvel Entertainment, LLC, a wholly-owned subsidiary of The Walt Disney Company');
+
+insert into heroe(name,id_company,min_bet,history,powers,picture_main, picture_descr) values (
+'SUPERMAN',1,200,
+' is a superhero that appears in comic books published by DC Comics, and is considered an American cultural icon. Superman was created by writer Jerry Siegel and artist Joe Shuster, high school students living in Cleveland, Ohio, in 1933; the character was sold to Detective Comics, Inc. (later DC Comics) in 1938. Superman first appeared in Action Comics #1 (June 1938) and subsequently appeared in various radio serials, television programs, films, newspaper strips, and video games. With the success of his adventures, Superman helped to create the superhero genre and establish its primacy within the American comic book.',
+'As an influential archetype of the superhero genre, Superman possesses extraordinary powers, with the character traditionally described as "faster than a speeding bullet, more powerful than a locomotive, and able to leap tall buildings in a single bound", a phrase coined by Jay Morton and first used in the Superman radio serials and Max Fleischer animated shorts of the 1940s[109] as well as the TV series of the 1950s. For most of his existence, Supermans famous arsenal of powers has included flight, super-strength, invulnerability to non-magical attacks, super-speed, vision powers (including x-ray, heat-emitting, telescopic, infra-red, and microscopic vision), super-hearing, super-intelligence, and super-breath, which enables him to blow out air at freezing temperatures, as well as exert the propulsive force of high-speed winds.',
+'http://static.comicvine.com/uploads/original/12/120919/3223740-6740249946-Super.jpg',
+'http://www.psephizo.com/wp-content/uploads/2013/11/3164668-superman.jpg.png'
+);
+
+insert into heroe(name,id_company,min_bet,history,powers,picture_main, picture_descr) values (
+'IRONMAN',2,400,
+' is a fictional character, a superhero that appears in comic books published by Marvel Comics. The character was created by writer-editor Stan Lee, developed by scripter Larry Lieber, and designed by artists Don Heck and Jack Kirby. He made his first appearance in Tales of Suspense #39 (March 1963).',
+'After being critically injured during a battle with the Extremis-enhanced Mallen, Stark injects his nervous system with modified techno-organic virus-like body restructuring machines (the Extremis process).[92] By rewriting his own biology, Stark is able to save his life, gain an enhanced healing factor, and partially merge with the Iron Man armor, superseding the need for bulky, AI-controlled armors in favor of lighter designs, technopathically controlled by his own brain. His enhanced technopathy extends to every piece of technology, limitless and effortlessly due to his ability to interface with communication satellites and wireless connections to increase his "range". Some components of the armor-sheath are now stored in Tonys body, able to be recalled, and extruded from his own skin, at will.',
+'http://rewalls.com/images/201208/reWalls.com_69500.jpg',
+'images/ironman.jpg'
+);*/
+
