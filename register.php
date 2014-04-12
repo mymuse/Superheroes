@@ -9,8 +9,7 @@
 <script src="js/all.js\"></script>
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT']."\before.php";
-printHeader();?>
+<?php include "before.php";?>
 	<div class="content">
 
 		<form class="register_form" onsubmit="return validRegister(this)" action="registered.php" method="POST">
@@ -33,7 +32,7 @@ printHeader();?>
 		</form>
 
 	</div>
-<?php printFooter();
+<?php include 'after.php';
 	?>
 	</body>
 	</html>

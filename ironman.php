@@ -9,7 +9,7 @@
 <script src="js/all.js\"></script>
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT']."\before.php";
+<?php include $_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR."before.php";
 printHeader();?>
 	<div class="container">
 		<div class="content">

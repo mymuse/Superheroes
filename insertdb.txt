@@ -18,5 +18,8 @@ insert into heroe(name,id_company,min_bet,history,powers,picture_main, picture_d
 'After being critically injured during a battle with the Extremis-enhanced Mallen, Stark injects his nervous system with modified techno-organic virus-like body restructuring machines (the Extremis process).[92] By rewriting his own biology, Stark is able to save his life, gain an enhanced healing factor, and partially merge with the Iron Man armor, superseding the need for bulky, AI-controlled armors in favor of lighter designs, technopathically controlled by his own brain. His enhanced technopathy extends to every piece of technology, limitless and effortlessly due to his ability to interface with communication satellites and wireless connections to increase his "range". Some components of the armor-sheath are now stored in Tonys body, able to be recalled, and extruded from his own skin, at will.',
 'http://rewalls.com/images/201208/reWalls.com_69500.jpg',
 'images/ironman.jpg'
-);*/
+);
+insert into auction (id_heroe,end_time) values(1,"2014-06-18 10:30:00");
+insert into auction (id_heroe,end_time) values(2,"2014-05-25 10:30:00");
+*/
 

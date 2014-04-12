@@ -5,8 +5,8 @@ DROP TABLE IF EXISTS company;
 DROP TABLE IF EXISTS account;
 create table account(
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	name varchar(30) NOT NULL,
-	email varchar(30) NOT NULL,
+	name varchar(30) unique NOT NULL,
+	email varchar(30) unique NOT NULL,
 	pwd varchar(20) NOT NULL,
 	gender boolean NOT NULL
 );

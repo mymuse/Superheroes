@@ -26,12 +26,16 @@ function bet() {
 
 function send() {
     var rows = $("#catalog > tbody > tr:has(.bet:checked)");
-    var win = window.open("", "", "");
-    for (var i=0;i<rows.length;i++) {
-        var row = rows[i];
-	var h1s = row.getElementsByClassName("h1_catalog");
-        win.document.writeln("Name " + h1s[0].innerHTML + ", price - " + h1s[1].innerHTML + "<br>");
+    if(rows.length==0){
+    	return;
     }
+
+    var request = $(rows[0]).attr('name');
+    for (var i=1;i<rows.length;i++) {
+        var id = $(rows[i]).attr('name');
+        request = request+"&"+id;
+    }
+    document.location = "bet.php?"+request;  
 }
 
 	function up() {
