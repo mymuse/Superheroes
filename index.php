@@ -11,7 +11,6 @@
 <body>
 	<?php
 	include "before.php";
-	printHeader ();
 	?>
 	
 	<div class="content">

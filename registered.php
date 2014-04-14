@@ -12,7 +12,6 @@
 <?php
 
 include  "before.php";
-printHeader ();
 ?>
 <div class="content">
 <?php
@@ -40,7 +39,6 @@ if (empty ( $gender )) {
 
 if ($isOk) {
 	session_start();
-	
 	$query = sprintf("insert into account (name,email,pwd,gender) values('%s','%s','%s',%s)",
 			$name,
 			$email,

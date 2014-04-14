@@ -12,7 +12,7 @@ $pwd = $_POST['pwd'];
 $query = sprintf("SELECT id, name FROM account WHERE name='%s' AND pwd='%s'",
 		$login,
 		$pwd);
-$link = mysql_connect('localhost:3306', 'root', 'root');
+$link = mysql_connect('localhost:3307', 'root', 'root');
 $db_selected = mysql_select_db('auction', $link);
 if (!$db_selected) {
 	echo "db not selected";
