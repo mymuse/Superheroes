@@ -1,8 +1,10 @@
 <?php
 session_start ();
 $id_curr_user = $_SESSION ['user_id'];
-if (! $id_curr_user)
+if (! $id_curr_user) {
 	header ( "Location: register.php" );
+	exit ();
+}
 $n = 2;
 
 for($i = 0; $i < $n; $i ++) {
@@ -32,6 +34,5 @@ for($i = 0; $i < count ( $auction ); $i ++) {
 		exit ();
 	}
 }
-
 header ( "Location: bets.php" );
 ?>
