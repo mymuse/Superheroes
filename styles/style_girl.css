@@ -1,0 +1,154 @@
+html {
+	min-height: 100%;
+	position: relative;
+	overflow: scroll;
+	background-color: #FFFFFF;
+	margin-left: 150px;
+	margin-right: 150px;
+}
+
+body {
+	background-color: white;
+	height: 100%;
+}
+
+.nav {
+	width: 100%;
+	background-color: #FFCCFF;
+	text-align: center;
+}
+
+.nav img {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 15px;
+	margin-right: 15px;
+	width: 30%;
+	max-height: 50px;
+}
+
+.content {
+	width: 100%;
+	min-height: 100%;
+	height: 100%;
+	margin: 0 auto;
+	background-color: #FFCCFF;
+	text-align: center;
+}
+
+.content img {
+	width: 100%;
+	heiht: 100%;
+}
+
+.header {
+	float: right;
+	background-color: #FF3399;
+	width: 100%;
+	margin-bottom: 2px;
+}
+
+.nameOrg {
+	width: 100%;
+	float: right;
+}
+
+.signIn{
+	visibility:hidden;
+	position: absolute;
+}
+
+.header:hover > .signIn{
+	visibility: visible;
+}
+
+.design {
+	margin-left: 90px;
+	float: left;
+	width: 100%;
+}
+
+.hcatalog {
+	width: 100%
+}
+
+.tdImg {
+	width: 30%;
+}
+
+.tdInfo {
+
+	width: 60%;
+}
+
+.selectedRow {
+	
+	background-color: #FF3399;
+}
+
+.detImg {
+	max-width: 80%;
+	text-align: center;
+}
+
+img {
+	max-width: 400px;
+}
+
+.limg {
+	width: 50%;
+}
+
+.h1catalog {
+	font-size: 100px;
+	font-style: normal;
+}
+
+.delivery {
+	text-align: justify;
+	font-size: 20px;
+	text-indent: 100px;
+}
+
+
+.firm_info_visible{
+	display: block;
+}
+
+.firm_info_hidden{
+	display: none;
+}
+
+.sign {
+	text-align: center;
+	font-size: 10px;
+	position: absolute;
+	bottom: 0;
+	left: 45%;
+}
+
+.sign_info{
+	position: absolute;
+	display: none;
+	visibility: hidden;
+}
+
+.sign:hover .sign_info{
+	position: absolute;
+	top:0;
+	left: 0;
+	background-color: #FFCCFF;
+	display: block;
+	width:100px;
+	height:40px;
+	visibility: visible;
+}
+
+
+.h1_link:hover {
+	background-color: #FFCCFF
+}
+
+.register_form {
+	text-align: left;
+}
