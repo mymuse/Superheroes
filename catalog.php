@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="styles/style.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-<script src="js/all.js\"></script>
+<script src="js/all.js"></script>
 </head>
 <body onload="initial();">
 <?php
@@ -42,11 +42,10 @@ if (! $result) {
 				    <tr
 					class="selectable <?php if(!$selectedAdded){echo "selectedRow";$selectedAdded=true;}?>"
 					name="<?php echo $row['id']?>">
-					<td class="tdImg"><a href="<?php echo "heroe.php?".$row['name'];?>">
+					<td class="tdImg"><a href="<?php echo "heroe.php?hero=".$row['name'];?>">
 							<img class="limg" alt="" src="<?php echo $row['picture_main'];?>">
 					</a></td>
-					<td class="tdInfo"><a
-						href="<?php echo "heroe.php?hero=".$row['name'];?>">
+					<td class="tdInfo" onclick="loadHero('<?php echo $row['name'];?>')">
 							<h1 class="h1_catalog h1_link"><?php echo $row['name'];?></h1>
 					</a> <br>
 						<div class="firm">

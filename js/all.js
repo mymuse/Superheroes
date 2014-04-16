@@ -17,6 +17,7 @@ function initial() {
 		$(this).addClass("selectedRow");
 	});
 	initFrimSelectors();
+
 }
 
 function bet() {
@@ -31,7 +32,7 @@ function send() {
 		return;
 	}
 	var current = $(".curr_bet");
-	
+
 	var request = "";
 	var request_bet = "";
 	for (var i = 0; i < rows.length; i++) {
@@ -42,7 +43,7 @@ function send() {
 	console.log(request);
 	console.log(request_bet);
 	document.location = "bet.php?" + request + request_bet;
-	
+
 }
 
 function up() {
@@ -87,7 +88,19 @@ function validRegister(f) {
 
 }
 function checkEmail(email) {
-
 	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(email);
+}
+
+function loadHero($name) {
+
+	$.ajax({
+		url : "asyncheroe.php",
+		data : {
+			name : $name
+		},
+		success : function(data) {
+			$(".content").html(data);
+		}
+	});
 }
